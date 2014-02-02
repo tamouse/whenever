@@ -74,7 +74,7 @@ module Whenever
       command << "-u #{@options[:user]}" if @options[:user]
       command << tmp_cron_file.path
 
-      $STDERR.puts "DEBUG #{File.basename(__FILE__)}:#{__FILE__}: command: #{command.inspect}"
+      STDERR.puts "DEBUG #{File.basename(__FILE__)}:#{__FILE__}: command: #{command.inspect}"
 
       if system(command.join(' '))
         action = 'written' if @options[:write]
